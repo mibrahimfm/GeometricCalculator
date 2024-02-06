@@ -3,7 +3,6 @@
     public abstract class Shape
     {
         public const double PI = 3.1415;
-        public abstract Shape CreateShape();
         public abstract double CalculateArea();
         public abstract double CalculatePerimeter();
         public abstract string RequestNecessaryParametersForShape();
@@ -11,7 +10,7 @@
 
         public override string ToString()
         {
-            return $"Area: {CalculateArea()} \nPerimeter: {CalculatePerimeter()}";
+            return $"Area: {CalculateArea():F2} \nPerimeter: {CalculatePerimeter():F2}";
         }
     }
 }

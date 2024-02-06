@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GeometricCalculator.Factory
+﻿namespace GeometricCalculator.Factory
 {
     public class Circle : Shape
     {
         public int Radius { get; set; }
-        public override Shape CreateShape()
-        {
-            return new Circle();
-        }
 
         public override double CalculateArea()
         {

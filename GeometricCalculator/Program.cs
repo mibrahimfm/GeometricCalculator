@@ -1,30 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GeometricCalculator.Exceptions;
-using GeometricCalculator.Factory;
+using GeometricCalculator.Factory.Creator;
 
 Console.WriteLine("Select shape: \n 1 - Square\n 2 - Circle\n 3 Rectangle\n 4 - Triangle");
 int shapeSelected = int.Parse(Console.ReadLine());
-Shape shape;
+ShapeCreator creator;
 
 switch (shapeSelected)
 {
     case 1:
-        shape = new Square();
+        creator = new SquareCreator();
         break;
     case 2:
-        shape = new Circle();
+        creator = new CircleCreator();
         break;
     case 3:
-        shape = new Rectangle();
+        creator = new RectangleCreator();
         break;
     case 4:
-        shape = new Triangle();
+        creator = new TriangleCreator();
         break;
     default:
         throw new NonExistentShapeException("Informed shape does not exist");
 }
 
-Console.WriteLine(shape.RequestNecessaryParametersForShape());
-shape.ReadNecessaryParametersForShape();
-
-Console.WriteLine(shape.ToString());
+Console.WriteLine(creator.FillShapeInformationAndPrintShape());

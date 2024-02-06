@@ -4,10 +4,6 @@
     {
         public int Height { get; set; }
         public int Width { get; set; }
-        public override Shape CreateShape()
-        {
-            return new Rectangle();
-        }
 
         public override double CalculateArea()
         {
